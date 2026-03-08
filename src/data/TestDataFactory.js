@@ -82,7 +82,6 @@ class TestDataFactory {
       identityDocType: 'Passport',
       identityFilePath: 'test-data/files/Germany-passport.jpg',
       documentNumber: 'A12345678',
-      issuingCountry: 'Argentina',
       issueDate: '2025-10-23',
       expiryDate: '2030-01-15',
       addressIssuingCountry: 'Argentina',
