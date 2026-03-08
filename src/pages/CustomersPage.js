@@ -9,8 +9,8 @@ class CustomersPage extends BasePage {
         this.pageTitle = page.getByRole('heading', { name: 'Customers' });
         this.customerTypeDropdown = page.locator('button:has-text("Individual"), button:has-text("Business")').first();
         this.addCustomerBtn = page.getByRole('button', { name: /add customer/i });
-        this.customerTable = page.locator('table, [role="table"]');
-        this.customerRows = page.locator('tbody tr, [role="row"]');
+        this.customerTable = page.getByRole('main').locator('div').filter({ hasText: /Customer/ }).filter({ hasText: /Status/ }).first();
+        this.customerRows = this.customerTable.locator('a[href*="customers/"]').locator('..');
 
         // Step 1 Modal - Create Customer
         this.modal = page.locator('[role="dialog"], .modal');
