@@ -105,6 +105,18 @@ class CustomersPage extends BasePage {
         return await this.customerRows.count();
     }
 
+    // Click the first customer in the list with the specified status (e.g. "Incomplete", "Approved")
+    async clickCustomerByStatus(status) {
+        const row = this.page.getByRole('main')
+            .locator('div')
+            .filter({ has: this.page.locator('a[href*="customers/"]') })
+            .filter({ hasText: status })
+            .first();
+        await expect(row).toBeVisible({ timeout: 10000 });
+        await row.locator('a[href*="customers/"]').first().click();
+        await this.page.waitForLoadState('networkidle');
+    }
+
     // ==================== STEP 1: CREATE CUSTOMER FORM ====================
 
     async selectCustomerType(type) {
