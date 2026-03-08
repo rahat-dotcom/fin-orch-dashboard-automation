@@ -1,0 +1,37 @@
+{
+  "name": "fin-orchestration-automation",
+  "version": "1.0.0",
+  "description": "Playwright automation suite for Fin.com Orchestration Platform",
+  "scripts": {
+    "test": "playwright test",
+    "test:staging": "cross-env TEST_ENV=staging playwright test",
+    "test:sandbox": "cross-env TEST_ENV=sandbox playwright test",
+    "test:smoke": "playwright test --project=smoke",
+    "test:chrome": "playwright test --project=chromium",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:customers": "playwright test tests/regression/customers/",
+    "test:auth": "playwright test tests/regression/auth/",
+    "test:beneficiaries": "playwright test tests/regression/beneficiaries/",
+    "report": "playwright show-report reports/html",
+    "codegen": "playwright codegen",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"**/*.ts\"",
+    "clean": "rimraf reports playwright/.auth test-results"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.42.0",
+    "@types/node": "^20.11.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.0",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

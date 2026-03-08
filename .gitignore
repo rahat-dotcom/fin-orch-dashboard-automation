@@ -1,0 +1,10 @@
+node_modules/
+reports/
+test-results/
+playwright/.auth/
+.env.staging
+.env.sandbox
+.env.production
+.env.local
+*.log
+.DS_Store
